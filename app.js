@@ -1,7 +1,19 @@
-document.getElementsById("openFile").addEventListener('change', function() {
-  var fr = new FileReader();
-  fr.onload = function() {
-      document.getElementsById("fileContents").textContent = this.result;
-  }
-  fr.readAsText(this.files[0]);
-})
+function readTextFile()
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", 'myfile.txt', false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
+            }
+        }
+    }
+    rawFile.send();
+}
+
+readTextFile();

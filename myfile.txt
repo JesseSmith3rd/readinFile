@@ -1,0 +1,9 @@
+
+10
+down vote
+accepted
+a character array is simply an array of characters
+
+a string is data structure that uses an array of characters
+
+some string representations use a null-terminator (like C), others use a length prefix
